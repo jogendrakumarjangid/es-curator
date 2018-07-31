@@ -8,11 +8,10 @@ before_deploy:
   - docker build -t $IMAGE_NAME:$TRAVIS_BUILD_NUMBER .
   - docker tag $IMAGE_NAME:$TRAVIS_BUILD_NUMBER jogendrajangid/es-curator:latest
 script:
-  - docker run --rm --name es-curator --entrypoint /usr/bin/curator  jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER  --version
-deploy:
   - docker login -u $user -p $passwd
   - docker push $IMAGE_NAME:$TRAVIS_BUILD_NUMBER
   - docker push $IMAGE_NAME:latest
+  - docker run --rm --name es-curator --entrypoint /usr/bin/curator  jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER  --version
 notifications:
   email:
     - jogendra.jangid@gmail.com
