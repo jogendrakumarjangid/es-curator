@@ -1,14 +1,18 @@
 sudo: required
-
 services:
   - docker
-
-before_install:
-  - docker build -t jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER .
-  - docker tag jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER jogendrajangid/es-curator:latest
+env:
+  global:
+    - IMAGE_NAME=jogendrajangid/es-curator
+before_deploy:
+  - docker build -t $IMAGE_NAME:$TRAVIS_BUILD_NUMBER .
+  - docker tag $IMAGE_NAME:$TRAVIS_BUILD_NUMBER jogendrajangid/es-curator:latest
+script:
+  - docker run --rm --name es-curator --entrypoint /usr/bin/curator  jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER  --version
+deploy:
   - docker login -u $user -p $passwd
-  - docker push jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER
-  - docker push jogendrajangid/es-curator:latest
+  - docker push $IMAGE_NAME:$TRAVIS_BUILD_NUMBER
+  - docker push $IMAGE_NAME:latest
 notifications:
   email:
     - jogendra.jangid@gmail.com
