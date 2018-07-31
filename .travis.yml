@@ -5,9 +5,10 @@ services:
 
 before_install:
   - docker build -t jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER .
+  - docker tag jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER jogendrajangid/es-curator:latest
   - docker login -u $user -p $passwd
   - docker push jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER
-
+  - docker push jogendrajangid/es-curator:latest
 notifications:
   email:
     - jogendra.jangid@gmail.com

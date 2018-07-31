@@ -18,11 +18,11 @@ The configuration files are:
 * **/etc/curator/config.yml**
 * **/etc/curator/actions.yml**
 
-### Executing container 
-docker run -it -d jogendrajangid/es-curator -e PERIOD=1 -e ES_HOST=elasticsearch-host -e DELETE_AGE=45
+### Executing container
+docker run -it -d --name es-curator -e PERIOD=86400 -e ES_HOST=elasticsearch-host -e DELETE_AGE=45 jogendrajangid/es-curator
 
 ### You can replace execting configuration file by attachment over the directory using '-v' like.
 
-docker run -it -d --name es-curator -v configpath:/etc/curator -e PERIOD=1 -e ES_HOST=elasticsearch-host -e DELETE_AGE=45 jogendrajangid/es-curator
+docker run -it -d --name es-curator -v configpath:/etc/curator -e PERIOD=86400 -e ES_HOST=elasticsearch-host -e DELETE_AGE=45 jogendrajangid/es-curator
 
-### Note: We have used sleep $PERIOD in the startup script. Process will be in sleep mode in the container and execute in the $PERIOD interval 
+### Note: We have used sleep $PERIOD in the startup script. Process will be in sleep mode in the container and execute in the $PERIOD interval
