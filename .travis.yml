@@ -1,10 +1,9 @@
 sudo: required
 services:
   - docker
-before_deploy:
+script:
   - docker build -t jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER .
   - docker tag jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER jogendrajangid/es-curator:latest
-script:
   - docker login -u $user -p $passwd
   - docker push jogendrajangid/es-curator:$TRAVIS_BUILD_NUMBER
   - docker push jogendrajangid/es-curator:latest
