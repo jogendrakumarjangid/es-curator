@@ -10,7 +10,7 @@ This image will periodically run [elasticsearch-curator](https://www.elastic.co/
 
 The image comes with basic, but functional, configuration files that utilize
 the environment variables above. The actions configuraion will delete indices
-that are prefixed with "logstash-" or "metricbeat-" that are older than
+that are prefixed with "filebeat-", "logstash-" or "metricbeat-" that are older than
 `$DELETE_AGE`.
 
 The configuration files are:
