@@ -1,4 +1,6 @@
-This image will periodically run [elasticsearch-curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.0/about.html).
+[elasticsearch-curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.0/about.html)
+
+This image will periodically run .
 
 ### Configuration Environment Variables
 
@@ -21,8 +23,8 @@ The configuration files are:
 ### Executing container
 docker run -it -d --name es-curator -e PERIOD=86400 -e ES_HOST=elasticsearch-host -e DELETE_AGE=45 jogendrajangid/es-curator
 
-### You can replace execting configuration file by attachment over the directory using '-v' like.
+You can replace execting configuration file by attachment over the directory using '-v' like.
 
 docker run -it -d --name es-curator -v configpath:/etc/curator -e PERIOD=86400 -e ES_HOST=elasticsearch-host -e DELETE_AGE=45 jogendrajangid/es-curator
 
-### Note: We have used sleep $PERIOD in the startup script. Process will be in sleep mode in the container and execute in the $PERIOD interval
+Note: We have used sleep $PERIOD in the startup script. Process will be in sleep mode in the container and execute in the $PERIOD interval
