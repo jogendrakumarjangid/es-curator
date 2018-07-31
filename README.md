@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/jogendrajangid1/es-curator.svg?branch=master)](https://travis-ci.org/jogendrajangid1/es-curator)
-[Docker image available](https://hub.docker.com/r/jogendrajangid/es-curator/)
+
+[Docker hub image](https://hub.docker.com/r/jogendrajangid/es-curator/)
 ### Configuration Environment Variables
 
 This image will periodically run .
