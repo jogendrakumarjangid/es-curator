@@ -1,0 +1,7 @@
+#!/bin/sh
+
+while true; do
+  /usr/bin/curator --config /etc/curator/config.yml /etc/curator/actions.yml
+
+  sleep ${PERIOD:-86400}
+done
