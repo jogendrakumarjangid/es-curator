@@ -1,11 +1,11 @@
 [![Build Status](https://travis-ci.org/jogendrajangid1/es-curator.svg?branch=master)](https://travis-ci.org/jogendrajangid1/es-curator)
-
+[Docker image available](https://hub.docker.com/r/jogendrajangid/es-curator/)
 ### Configuration Environment Variables
 
 This image will periodically run .
 * **PERIOD** : defines period (in seconds) between runs of curator; default is 86400 seconds (1 day)
 * **ES_HOST** : defines the hostname of the Elasticsearch node to contact; default is master
-* **DELETE_AGE** : defines what age (and older) of indices will be deleted; defaul is 45
+* **DELETE_AGE** : defines what age (and older) of indices will be deleted; default is 45
 
 ### Configuration filters
 
