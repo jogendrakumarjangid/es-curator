@@ -30,4 +30,4 @@ docker run -it -d --name es-curator -v configpath:/etc/curator -e PERIOD=86400 -
 Note: We have used sleep $PERIOD in the startup script. Process will be in sleep mode in the container and execute in the $PERIOD interval
 
 For more information :- [elasticsearch-curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.0/about.html)
----
+----
